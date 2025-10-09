@@ -88,10 +88,10 @@ PUBLIC_FILE_CHANNEL = environ.get('PUBLIC_FILE_CHANNEL', '') # Public Channel Us
 
 
 # Links
-GRP_LNK = environ.get('GRP_LNK', 'https://t.me/bookpdfepub')
-CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/library_of_heaven')
-SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'bookpdfepub') # Support Chat Link Without https:// or @
-OWNER_LNK = environ.get('OWNER_LNK', 'https://t.me/prasadonly')
+GRP_LNK = environ.get('GRP_LNK', 'https://t.me/bookreq90')
+CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/freeebookspdf1')
+SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'bookreq90') # Support Chat Link Without https:// or @
+OWNER_LNK = environ.get('OWNER_LNK', 'https://t.me/soniprashant0')
 
 # True Or False
 AI_SPELL_CHECK = bool(environ.get('AI_SPELL_CHECK', False))
@@ -196,3 +196,4 @@ else:
 # Don't Remove Credit @VJ_Botz
 # Subscribe YouTube Channel For Amazing Bot @Tech_VJ
 # Ask Doubt on telegram @KingVJ01
+
