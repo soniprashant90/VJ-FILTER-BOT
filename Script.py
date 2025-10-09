@@ -6,11 +6,11 @@ class script(object):
     START_TXT = """<b><blockquote>ʜᴇʟʟᴏ {}, ᴍʏ ɴᴀᴍᴇ <a href=https://t.me/{}>{}</a></blockquote>
 
 📚 <u>Features:</u>  
-1️⃣ <i>Type the book name</i> (no author needed), and I'll find audiobooks for you.  
-2️⃣ <i>Access 2000+ audiobooks</i> anytime, anywhere.  
-3️⃣ <i>Request more audiobooks</i> by messaging @Bookmelover.  
+1️⃣ <i>Type the book name</i> (no author needed), and I'll find books for you.  
+2️⃣ <i>Access 20000+ books</i> anytime, anywhere.  
+3️⃣ <i>Request more audiobooks or books</i> by messaging @mrprashant00.  
 
-⚡ <i>Powered by @library_of_heaven</i>  
+⚡ <i>Powered by @freeebookspdf1</i>  
 
 ✨ <i>Happy Listening!</i> ✨</b>"""
 
@@ -23,7 +23,7 @@ Hᴇʀᴇ Is Tʜᴇ Hᴇʟᴘ Fᴏʀ Mʏ Cᴏᴍᴍᴀɴᴅs.</b>"""
 
     ABOUT_TXT = """<b><blockquote>⍟───[ ᴍʏ ᴅᴇᴛᴀɪʟꜱ ]───⍟</blockquote>
     
-‣ ᴍʏ Group : <a href=https://t.me/library_of_heaven</a>
+‣ ᴍʏ Group : <a href=https://t.me/freeebookspdf1</a>
 """
 
     CLONE_ABOUT_TXT = """<b><blockquote>⍟───[ ᴍʏ ᴀʙᴏᴜᴛ ]───⍟</blockquote>
@@ -208,7 +208,7 @@ Nᴀᴍᴇ - {}"""
 - ʀᴇǫᴜᴇꜱᴛ ꜰᴏʀᴍᴀᴛ: "God of fury"  
 - ᴅᴏ ɴᴏᴛ ᴜꜱᴇ ꜱᴘᴇᴄɪᴀʟ ᴄʜᴀʀᴀᴄᴛᴇʀꜱ ➠ ':(!,./)
 
-🚨 ɪꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴍᴏʀᴇ ᴀᴜᴅɪᴏʙᴏᴏᴋꜱ, ᴘʟᴇᴀꜱᴇ ᴍᴇꜱꜱᴀɢᴇ @Bookmelover.</b>"""
+🚨 ɪꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴍᴏʀᴇ ʙᴏᴏᴋꜱ, ᴘʟᴇᴀꜱᴇ ᴍᴇꜱꜱᴀɢᴇ @mrprashant00.</b>"""
 
     I_CUD_NT = """ɪ ᴄᴏᴜʟᴅɴ'ᴛ ꜰɪɴᴅ ᴀɴʏ ᴍᴏᴠɪᴇ ʀᴇʟᴀᴛᴇᴅ ᴛᴏ {}.
 ᴘʟᴇᴀꜱᴇ ᴄʜᴇᴄᴋ ᴛʜᴇ ꜱᴘᴇʟʟɪɴɢ ᴏɴ ɢᴏᴏɢʟᴇ ᴏʀ ɪᴍᴅʙ..."""
@@ -339,7 +339,7 @@ Aᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅs:
  </b>""" 
 
     PROGRESS_BAR = """\n
-╭━━━━❰ Lib heaven  Renaming... ❱━➣
+╭━━━━❰   Renaming... ❱━➣
 ┣⪼ 🗂️ : {1} | {2}
 ┣⪼ ⏳️ : {0}%
 ┣⪼ 🚀 : {3}/s
@@ -750,3 +750,4 @@ Example:- /set_caption 📕 File Name: {filename}
 
 
     
+
