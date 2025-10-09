@@ -40,11 +40,11 @@ async def start(client, message):
     if len(message.command) != 2:
         if PREMIUM_AND_REFERAL_MODE:
             buttons = [[
-                 InlineKeyboardButton('📚 REQUEST GROUP', url='https://t.me/bookpdfepub')
+                 InlineKeyboardButton('📚 REQUEST GROUP', url='https://t.me/bookreq90')
             ]]
         else:
             buttons = [[
-                 InlineKeyboardButton('📚 REQUEST GROUP', url='https://t.me/bookpdfepub')
+                 InlineKeyboardButton('📚 REQUEST GROUP', url='https://t.me/bookreq90')
             ]]
  # No buttons displayed
         if CLONE_MODE == True:
@@ -388,7 +388,7 @@ async def start(client, message):
                     ]]
                 else:
                     button = [[
-                        InlineKeyboardButton('Request Group', url=f'https://t.me/bookpdfepub')
+                        InlineKeyboardButton('Request Group', url=f'https://t.me/bookreq90')
                     ]]
                 try:
                     p = await msg.copy(message.chat.id, caption=f_caption, protect_content=True if protect == "/pbatch" else False, reply_markup=InlineKeyboardMarkup(button))
@@ -515,7 +515,7 @@ async def start(client, message):
                     )
                     return
             button = [[
-                        InlineKeyboardButton('Request Group', url=f'https://t.me/bookpdfepub')
+                        InlineKeyboardButton('Request Group', url=f'https://t.me/bookreq90')
                     ]]
             if STREAM_MODE == True:
                 button.append([InlineKeyboardButton('🚀 Fast Download / Watch Online🖥️', callback_data=f'generate_stream_link:{file_id}')])
@@ -574,7 +574,7 @@ async def start(client, message):
                     )
                     return
             button = [[
-                        InlineKeyboardButton('Request Group', url=f'https://t.me/bookpdfepub')
+                        InlineKeyboardButton('Request Group', url=f'https://t.me/bookreq90')
                     ]]
             if STREAM_MODE == True:
                 button.append([InlineKeyboardButton('🚀 Fast Download / Watch Online🖥️', callback_data=f'generate_stream_link:{file_id}')])
@@ -635,7 +635,7 @@ async def start(client, message):
             )
             return
     button = [[
-                        InlineKeyboardButton('Request Group', url=f'https://t.me/bookpdfepub')
+                        InlineKeyboardButton('Request Group', url=f'https://t.me/bookreq90')
                     ]]
     if STREAM_MODE == True:
         button.append([InlineKeyboardButton('🚀 Fast Download / Watch Online🖥️', callback_data=f'generate_stream_link:{file_id}')])
@@ -1463,3 +1463,4 @@ async def purge_requests(client, message):
             parse_mode=enums.ParseMode.MARKDOWN,
             disable_web_page_preview=True
         )
+
