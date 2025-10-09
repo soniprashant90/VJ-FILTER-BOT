@@ -12,7 +12,7 @@ class script(object):
 
 ⚡ <i>Powered by @freeebookspdf1</i>  
 
-✨ <i>Happy Listening!</i> ✨</b>"""
+✨ <i>Happy Reading!</i> ✨</b>"""
 
     CLONE_START_TXT = """<b><blockquote>ʜᴇʟʟᴏ {}, ᴍʏ ɴᴀᴍᴇ <a href=https://t.me/{}>{}</a></blockquote>
     
@@ -750,4 +750,5 @@ Example:- /set_caption 📕 File Name: {filename}
 
 
     
+
 
