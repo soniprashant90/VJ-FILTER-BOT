@@ -2522,7 +2522,7 @@ async def auto_filter(client, name, msg, reply_msg, ai_search, spoll=False):
 - Request Format: `Harry Potter`  
 - Avoid Using Special Characters: `':(!,./)`  
 
-🚨 **For more audiobooks, message @Bookmelover.**""")
+🚨 **For more books, message @mrprashant00.**""")
         else:
             return
     else:
@@ -3211,4 +3211,5 @@ async def global_filters(client, message, text=False):
                 break
     else:
         return False
+
 
