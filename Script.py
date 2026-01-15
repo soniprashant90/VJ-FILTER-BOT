@@ -7,10 +7,10 @@ class script(object):
 
 📚 <u>Features:</u>  
 1️⃣ <i>Type the book name</i> (no author needed), and I'll find books for you.  
-2️⃣ <i>Access 20000+ books</i> anytime, anywhere.  
-3️⃣ <i>Request more audiobooks or books</i> by messaging @mrprashant00.  
+2️⃣ <i>Access 50,000+ books</i> anytime, anywhere.  
+3️⃣ <i>Request more audiobooks or books</i> by messaging @bookreq90 
 
-⚡ <i>Powered by @freeebookspdf1</i>  
+⚡ <i>Powered by @freeebookspdf2</i>  
 
 ✨ <i>Happy Reading!</i> ✨</b>"""
 
@@ -23,7 +23,7 @@ Hᴇʀᴇ Is Tʜᴇ Hᴇʟᴘ Fᴏʀ Mʏ Cᴏᴍᴍᴀɴᴅs.</b>"""
 
     ABOUT_TXT = """<b><blockquote>⍟───[ ᴍʏ ᴅᴇᴛᴀɪʟꜱ ]───⍟</blockquote>
     
-‣ ᴍʏ Group : <a href=https://t.me/freeebookspdf1</a>
+‣ ᴍʏ Group : <a href=https://t.me/freeebookspdf2</a>
 """
 
     CLONE_ABOUT_TXT = """<b><blockquote>⍟───[ ᴍʏ ᴀʙᴏᴜᴛ ]───⍟</blockquote>
@@ -200,7 +200,7 @@ Nᴀᴍᴇ - {}"""
     CUDNT_FND = """ɪ ᴄᴏᴜʟᴅɴ'ᴛ ꜰɪɴᴅ ᴀɴʏᴛʜɪɴɢ ʀᴇʟᴀᴛᴇᴅ ᴛᴏ {}
 ᴅɪᴅ ʏᴏᴜ ᴍᴇᴀɴ ᴀɴʏ ᴏɴᴇ ᴏꜰ ᴛʜᴇꜱᴇ?"""
 
-    I_CUDNT = """<b>sᴏʀʀʏ, ɴᴏ ᴀᴜᴅɪᴏʙᴏᴏᴋꜱ ᴡᴇʀᴇ ꜰᴏᴜɴᴅ ꜰᴏʀ ʏᴏᴜʀ ʀᴇǫᴜᴇꜱᴛ "{}" 😕  
+    I_CUDNT = """<b> Nᴏ ʙᴏᴏᴋꜱ ᴡᴇʀᴇ ꜰᴏᴜɴᴅ ꜰᴏʀ ʏᴏᴜʀ ʀᴇǫᴜᴇꜱᴛ "{}" 😕  
 
 ᴘʟᴇᴀꜱᴇ ᴄʜᴇᴄᴋ ʏᴏᴜʀ ꜱᴘᴇʟʟɪɴɢ ᴏʀ ᴛʀʏ ᴜꜱɪɴɢ ᴀ ᴅɪꜰꜰᴇʀᴇɴᴛ ꜱᴇᴀʀᴄʜ ꜰᴏʀᴍᴀᴛ. 😃  
 
@@ -208,7 +208,7 @@ Nᴀᴍᴇ - {}"""
 - ʀᴇǫᴜᴇꜱᴛ ꜰᴏʀᴍᴀᴛ: "God of fury"  
 - ᴅᴏ ɴᴏᴛ ᴜꜱᴇ ꜱᴘᴇᴄɪᴀʟ ᴄʜᴀʀᴀᴄᴛᴇʀꜱ ➠ ':(!,./)
 
-🚨 ɪꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴍᴏʀᴇ ʙᴏᴏᴋꜱ, ᴘʟᴇᴀꜱᴇ ᴍᴇꜱꜱᴀɢᴇ @mrprashant00.</b>"""
+🚨 ɪꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴍᴏʀᴇ ʙᴏᴏᴋꜱ, ᴘʟᴇᴀꜱᴇ ᴍᴇꜱꜱᴀɢᴇ @bookreq90.</b>"""
 
     I_CUD_NT = """ɪ ᴄᴏᴜʟᴅɴ'ᴛ ꜰɪɴᴅ ᴀɴʏ ᴍᴏᴠɪᴇ ʀᴇʟᴀᴛᴇᴅ ᴛᴏ {}.
 ᴘʟᴇᴀꜱᴇ ᴄʜᴇᴄᴋ ᴛʜᴇ ꜱᴘᴇʟʟɪɴɢ ᴏɴ ɢᴏᴏɢʟᴇ ᴏʀ ɪᴍᴅʙ..."""
@@ -750,5 +750,6 @@ Example:- /set_caption 📕 File Name: {filename}
 
 
     
+
 
 
