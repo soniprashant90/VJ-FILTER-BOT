@@ -7,7 +7,7 @@ class script(object):
 
 📚 <u>Features:</u>  
 1️⃣ <i>Type the book name</i> (no author needed), and I'll find books for you.  
-2️⃣ <i>Access 50,000+ books</i> anytime, anywhere.  
+2️⃣ <i>Access 50,000+ books</i> .  
 3️⃣ <i>Request more audiobooks or books</i> by messaging @bookreq90 
 
 ⚡ <i>Powered by @freeebookspdf2</i>  
@@ -749,6 +749,7 @@ Example:- /set_caption 📕 File Name: {filename}
 
 
     
+
 
 
 
