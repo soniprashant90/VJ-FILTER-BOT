@@ -7,10 +7,10 @@ from Script import script
 from pyrogram import Client, filters, enums
 from pyrogram.errors import ChatAdminRequired, FloodWait
 from pyrogram.types import *
-from database.ia_filterdb import col, sec_col, get_file_details, unpack_new_file_id, get_bad_files
+from database.ia_filterdb import col, sec_col, get_file_details, unpack_new_file_id, get_bad_files, iter_files
 from database.users_chats_db import db, delete_all_referal_users, get_referal_users_count, get_referal_all_users, referal_add_user
 from database.join_reqs import JoinReqs
-from info import CLONE_MODE, OWNER_LNK, REACTIONS, CHANNELS, REQUEST_TO_JOIN_MODE, TRY_AGAIN_BTN, ADMINS, SHORTLINK_MODE, PREMIUM_AND_REFERAL_MODE, STREAM_MODE, AUTH_CHANNEL, REFERAL_PREMEIUM_TIME, REFERAL_COUNT, PAYMENT_TEXT, PAYMENT_QR, LOG_CHANNEL, PICS, BATCH_FILE_CAPTION, CUSTOM_FILE_CAPTION, PROTECT_CONTENT, CHNL_LNK, GRP_LNK, REQST_CHANNEL, SUPPORT_CHAT_ID, SUPPORT_CHAT, MAX_B_TN, VERIFY, SHORTLINK_API, SHORTLINK_URL, TUTORIAL, VERIFY_TUTORIAL, IS_TUTORIAL, URL
+from info import CLONE_MODE, OWNER_LNK, REACTIONS, CHANNELS, REQUEST_TO_JOIN_MODE, TRY_AGAIN_BTN, ADMINS, SHORTLINK_MODE, PREMIUM_AND_REFERAL_MODE, STREAM_MODE, AUTH_CHANNEL, REFERAL_PREMEIUM_TIME, REFERAL_COUNT, PAYMENT_TEXT, PAYMENT_QR, LOG_CHANNEL, PICS, BATCH_FILE_CAPTION, CUSTOM_FILE_CAPTION, PROTECT_CONTENT, CHNL_LNK, GRP_LNK, REQST_CHANNEL, SUPPORT_CHAT_ID, SUPPORT_CHAT, MAX_B_TN, VERIFY, SHORTLINK_API, SHORTLINK_URL, TUTORIAL, VERIFY_TUTORIAL, IS_TUTORIAL, URL, GETALL_LIMIT
 from utils import get_settings, pub_is_subscribed, get_size, is_subscribed, save_group_settings, temp, verify_user, check_token, check_verification, get_token, get_shortlink, get_tutorial, get_seconds
 from database.connections_mdb import active_connection
 from urllib.parse import quote_plus
@@ -19,6 +19,43 @@ logger = logging.getLogger(__name__)
 
 BATCH_FILES = {}
 join_db = JoinReqs
+
+async def send_indexed_files(bot, message, target_chat_id, source_chat_id=None):
+    sent = 0
+    errors = 0
+    found = False
+    status = await message.reply_text(
+        f"<b>Starting to send indexed files.</b>\nTarget: <code>{target_chat_id}</code>\nLimit: <code>{GETALL_LIMIT}</code>"
+    )
+    for file in iter_files(source_chat_id):
+        found = True
+        if sent >= GETALL_LIMIT:
+            break
+        caption = file.get("file_name") or "File"
+        while True:
+            try:
+                await bot.send_cached_media(
+                    chat_id=target_chat_id,
+                    file_id=file["file_id"],
+                    caption=caption
+                )
+                sent += 1
+                break
+            except FloodWait as e:
+                await asyncio.sleep(e.value)
+            except Exception:
+                errors += 1
+                break
+        if sent % 25 == 0:
+            await status.edit_text(
+                f"<b>Sending indexed files...</b>\nSent: <code>{sent}</code>\nErrors: <code>{errors}</code>\nLimit: <code>{GETALL_LIMIT}</code>"
+            )
+        await asyncio.sleep(0.3)
+    if not found:
+        return await status.edit_text("<b>No indexed files found for this request.</b>")
+    await status.edit_text(
+        f"<b>Completed.</b>\nSent: <code>{sent}</code>\nErrors: <code>{errors}</code>\nLimit: <code>{GETALL_LIMIT}</code>"
+    )
 
 @Client.on_message(filters.command("start") & filters.incoming)
 async def start(client, message):
@@ -1069,6 +1106,31 @@ async def requests(bot, message):
         ]]
         await message.reply_text("<b>Your request has been added! Please wait for some time.\n\nJoin Channel First & View Request</b>", reply_markup=InlineKeyboardMarkup(btn))
     
+@Client.on_message(filters.private & filters.user(ADMINS) & filters.command("getall"))
+async def getall_indexed_files(bot, message):
+    if message.text.startswith("/getall_"):
+        return
+    if len(message.command) < 2:
+        return await message.reply_text("<b>Usage:</b> <code>/getall &lt;target_channel_id&gt;</code>")
+    target_id = message.command[1]
+    if not re.match(r"^-?\d+$", target_id):
+        return await message.reply_text("<b>Target channel id must be numeric.</b>")
+    await send_indexed_files(bot, message, int(target_id))
+
+
+@Client.on_message(filters.private & filters.user(ADMINS) & filters.regex(r"^/getall_(-?\d+)(?:\s+(-?\d+))?$"))
+async def getall_indexed_files_for_channel(bot, message):
+    match = re.match(r"^/getall_(-?\d+)(?:\s+(-?\d+))?$", message.text)
+    if not match:
+        return await message.reply_text("<b>Usage:</b> <code>/getall_&lt;source_channel_id&gt; &lt;target_channel_id&gt;</code>")
+    source_id = int(match.group(1))
+    target_id = match.group(2)
+    if not target_id:
+        return await message.reply_text("<b>Usage:</b> <code>/getall_&lt;source_channel_id&gt; &lt;target_channel_id&gt;</code>")
+    if not re.match(r"^-?\d+$", target_id):
+        return await message.reply_text("<b>Target channel id must be numeric.</b>")
+    await send_indexed_files(bot, message, int(target_id), source_chat_id=source_id)
+
 @Client.on_message(filters.command("send") & filters.user(ADMINS))
 async def send_msg(bot, message):
     if message.reply_to_message:
