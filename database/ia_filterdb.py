@@ -26,7 +26,7 @@ sec_db = sec_client[DATABASE_NAME]
 sec_col = sec_db[COLLECTION_NAME]
 
 
-async def save_file(media):
+async def save_file(media, source_chat_id=None):
     """Save file in database"""
 
     file_id, file_ref = unpack_new_file_id(media.file_id)
@@ -39,7 +39,8 @@ async def save_file(media):
         'file_id': file_id,
         'file_name': file_name,
         'file_size': media.file_size,
-        'caption': media.caption.html if media.caption else None
+        'caption': media.caption.html if media.caption else None,
+        'source_chat_id': source_chat_id
     }
     found1 = {'file_name': file_name}
     found = {'file_id': file_id}
@@ -198,6 +199,20 @@ async def get_file_details(query):
     if not filedetails:
         filedetails = sec_col.find_one(filter)
     return filedetails
+
+
+def iter_files(source_chat_id=None):
+    filter_query = {}
+    if source_chat_id is not None:
+        filter_query = {'source_chat_id': source_chat_id}
+    if MULTIPLE_DATABASE == True:
+        for file in col.find(filter_query):
+            yield file
+        for file in sec_col.find(filter_query):
+            yield file
+    else:
+        for file in col.find(filter_query):
+            yield file
 
 
 def encode_file_id(s: bytes) -> str:
